@@ -1,25 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import NotFound from "./error/not-found";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./home";
+import StudentCardPage from "./pages/StudentCardPage";
+import ShowDormitoryTable from "./components/showDormitoryTable";
+import Login from "./components/Login";
+import CreateStudentCard from "./components/CreateStudentCard";
+import SearchDormitory from "./components/SearchDormitory";
+import DormitoryPage from "./pages/DormitoryPage";
+import withAuth from "./components/withAuth";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="main">
+            <BrowserRouter>
+                <Routes>
+                    <Route path='*' element={<NotFound />} />
+                    <Route path="/" element={<Home />} />
+                    <Route path="/cards" element={<StudentCardPage />} />
+                    <Route path="/cards/create" element={<CreateStudentCard/>} />
+                    <Route path="/dormitory" element={<DormitoryPage />} />
+                    <Route path="/login" element={<Login />} />
+                </Routes>
+            </BrowserRouter>
+        </div>
+    );
 }
 
 export default App;

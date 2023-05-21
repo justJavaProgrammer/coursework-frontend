@@ -1,0 +1,15 @@
+.table-container {
+    height: 290px;
+    overflow-y: auto;
+}
+
+.result-table {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+
+}
+.result-table th,
+.result-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
